@@ -1,4 +1,4 @@
-﻿using ArkBot.Modules.Application.ViewModel;
+using ArkBot.Modules.Application.ViewModel;
 using ArkBot.Utils;
 using ArkBot.Utils.Interop;
 using CefSharp;
@@ -25,10 +25,10 @@ namespace ArkBot
             var settings = new CefSettings()
             {
                 //LogSeverity = LogSeverity.Verbose,
-                LogFile = "logs\\cefsharp.log",
+                LogFile = Path.GetFullPath("logs\\cefsharp.log"),
                 //TODO [.NET Core]: Changed temporarily (could not get moving additional dll to /lib to work)
                 //BrowserSubprocessPath = "lib\\CefSharp.BrowserSubprocess.exe",
-                BrowserSubprocessPath = "CefSharp.BrowserSubprocess.exe",
+                BrowserSubprocessPath = Path.GetFullPath("CefSharp.BrowserSubprocess.exe"),
             };
 
             Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
